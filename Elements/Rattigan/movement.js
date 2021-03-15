@@ -6,7 +6,7 @@ function makeJump(e) {
 
  document.addEventListener("keydown", makeMoveLeft); //Looks for when a key is pressed.
  function makeMoveLeft(e) { //This function will make the ball jump.
-   if (e.key == "A") { //When the spacebar is pressed (the empty string being the spacebar).
+   if (e.key == "A") { //When the a is pressed then Rattigan  should move left  .
      player.yMove -= 5; //The ball will be tossed up a short distance.
    }
    if (e.key == "r") {
