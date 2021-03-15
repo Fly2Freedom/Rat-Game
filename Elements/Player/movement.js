@@ -9,7 +9,7 @@ function makeJump(e) {
    if (e.key == "A") { //When the spacebar is pressed (the empty string being the spacebar).
      player.yMove -= 5; //The ball will be tossed up a short distance.
    }
-   if (e.key == "r") {
+   if (e.key == "a") {
      player.xMove = -player.xMove;
    }
  }
