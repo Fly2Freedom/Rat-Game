@@ -9,7 +9,7 @@ function makeJump(e) {
    if (e.key == "A") { //When the a is pressed then Rattigan  should move left  .
      player.yMove -= 5; //The ball will be tossed up a short distance.
    }
-   if (e.key == "r") {
+   if (e.key == "a") {
      player.xMove = -player.xMove;
    }
  }
