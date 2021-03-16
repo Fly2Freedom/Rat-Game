@@ -7,5 +7,5 @@ class Amogus {
     let position = new x.position += y.position;
     return movement.getFinalPosition() - this.startingPosition;
   }
-  console.log();
+  console.log("Hi world");
 }
