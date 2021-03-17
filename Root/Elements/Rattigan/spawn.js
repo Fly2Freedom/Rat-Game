@@ -5,7 +5,7 @@ class Player {
     this.xspeed = 0;
     this.yspeed = 0;
     this.friction = 0.6;
-    this.gravity = 0.8
+    this.gravity = 1;
     this.maxSpeed = 5;
     this.width = 50;
     this.height = 100;
@@ -33,7 +33,7 @@ class Player {
       }
       //Jump
       if (keyUp) {
-        this.yspeed -= 1.5;
+        this.yspeed -= 2;
       }
       this.yspeed += this.gravity;
 
@@ -48,6 +48,57 @@ class Player {
       } else if (this.xspeed < -this.maxSpeed) {
         this.yspeed = -this.maxSpeed;
       }
+      //Make speed a whole number
+      if (this.xspeed > 0) {
+        this.xspeed = Math.floor(this.xspeed);
+      } else {
+        this.xspeed = Math.ceil(this.xspeed);
+      }
+      if (this.yspeed > 0) {
+        this.yspeed = Math.floor(this.yspeed);
+      } else {
+        this.yspeed = Math.ceil(this.yspeed);
+      }
+
+      //Horizontal Collision
+      let horizontalRect = {
+        x: this.x + this.xspeed,
+        y: this.y,
+        width: this.width,
+        height: this.height
+      }
+
+      //Vertical Collision
+      let verticalRect = {
+        x: this.x,
+        y: this.y + this.yspeed,
+        width: this.width,
+        height: this.height
+      }
+
+      //Check for intersections
+      for (let i = 0; i < walls.length; i++) {
+        let borderRect = {
+          x: walls[i].x,
+          y: walls[i].y,
+          width: walls[i].width,
+          height: walls[i].height
+        }
+        if (checkIntersection(horizontalRect, borderRect)) {
+          while (checkIntersection(horizontalRect, borderRect)) {
+            horizontalRect.x -= Math.sign(this.xspeed);
+          }
+          this.x = horizontalRect.x;
+          this.xspeed = 0;
+        }
+        if (checkIntersection(verticalRect, borderRect)) {
+          while (checkIntersection(verticalRect, borderRect)) {
+            verticalRect.y -= Math.sign(this.yspeed);
+          }
+          this.y = verticalRect.y;
+          this.yspeed = 0;
+        }
+      }
 
       //Update the player's coordinates.
       this.x += this.xspeed;
@@ -55,4 +106,3 @@ class Player {
     }
   }
 }
-console.log("Hello world")
