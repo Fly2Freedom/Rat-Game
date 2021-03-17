@@ -55,3 +55,4 @@ class Player {
     }
   }
 }
+console.log("Hello world")
