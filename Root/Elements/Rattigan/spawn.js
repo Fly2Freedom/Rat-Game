@@ -10,7 +10,6 @@ class Player {
     this.width = 50;
     this.height = 100;
     this.active = true;
-    this.jump = false;
   }
 
   //Draw character

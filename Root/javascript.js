@@ -42,6 +42,12 @@ window.onload = function() {
 
   walls.push(new Arena(600, 360, 60, 60, 3)); //POW Block
 
+  walls.push(new Arena(0, 0, 1280, 2, 4)); //Ceiling
+
+  walls.push(new Arena(0, 0, 2, 780, 4)); //Left Wall
+
+  walls.push(new Arena(1279, 0, 2, 780, 4)); //Right Wall
+
 }
 
 //Checks for movement 60 times per second (60fps) and then draws everything.
