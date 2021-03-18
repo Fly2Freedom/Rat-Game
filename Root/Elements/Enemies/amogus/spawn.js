@@ -1,7 +1,7 @@
 class Amogus {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
+  constructor(color, name) {
+    this.color = color;
+    this.name = name;
     this.xspeed = 0;
     this.yspeed = 0;
     this.friction = 0.6;
