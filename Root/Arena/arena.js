@@ -15,8 +15,6 @@ class Arena {
       ctx.fillStyle = "pipe";
     } else if (this.type === 3) { //Rectangle Type 3 = Pow Block Sprite
       ctx.fillStyle = "pow";
-    } else if (this.type === 4) { //Rectangle Type 4 = Walls and Ceiling
-      ctx.fillStyle = "invis"
     }
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }

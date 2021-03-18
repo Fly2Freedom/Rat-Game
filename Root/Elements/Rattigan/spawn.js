@@ -4,9 +4,9 @@ class Player {
     this.y = y;
     this.xspeed = 0;
     this.yspeed = 0;
-    this.friction = 0.6;
+    this.friction = 0.4;
     this.gravity = 1;
-    this.maxSpeed = 5;
+    this.maxSpeed = 10;
     this.width = 50;
     this.height = 100;
     this.active = true;
@@ -32,21 +32,14 @@ class Player {
       }
       //Jump
       if (keyUp) {
-        this.yspeed -= 2;
+        if (this.yspeed < 1) {
+          this.yspeed = -15;
+        } else if (this.yspeed < -20) {
+          this.yspeed += this.friction;
+        }
       }
       this.yspeed += this.gravity;
 
-      //Cap speed at a certain amount (might not even need?)
-      if (this.xspeed > this.maxSpeed) {
-        this.xspeed = this.maxSpeed;
-      } else if (this.xspeed < -this.maxSpeed) {
-        this.xspeed = -this.maxSpeed;
-      }
-      if (this.yspeed > this.maxSpeed) {
-        this.yspeed = this.maxSpeed;
-      } else if (this.xspeed < -this.maxSpeed) {
-        this.yspeed = -this.maxSpeed;
-      }
       //Make speed a whole number
       if (this.xspeed > 0) {
         this.xspeed = Math.floor(this.xspeed);
