@@ -14,8 +14,9 @@ class Amogus {
 
   spawn() {
     ctx.beginPath();
-    ctx.fillStyle = "#000001";
-    ctx.fillRect()
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.stroke();
   }
 }
 console.log("Hi world");

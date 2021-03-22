@@ -64,6 +64,8 @@ function draw() {
   ctx.fillRect(0,0,1280,720);
   //Draw player
   player.spawn();
+  goomba.spawn();
+  amogus.spawn();
   //Draw walls
   for (let i = 0; i < walls.length; i++) {
     walls[i].draw();
