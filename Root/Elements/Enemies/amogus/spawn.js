@@ -8,7 +8,7 @@ class Amogus {
     this.gravity = 1;
     this.maxSpeed = 3;
     this.width = 50;
-    this.highth = 80;
+    this.height = 80;
     this.active = true;
   }
 
