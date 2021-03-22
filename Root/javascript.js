@@ -69,7 +69,7 @@ function draw() {
   //Draw walls
   for (let i = 0; i < walls.length; i++) {
     walls[i].draw();
-    ctx.fillStyle = "cyan";
+    ctx.fillStyle = "limegreen";
     ctx.fillRect(0,650,1280,100,1);
   }
 }
