@@ -4,7 +4,7 @@ var ctx = canvas.getContext("2d");
 
 //Player object and variable for looping the game functions
 var player = new Player(600, 540);
-var goomba = new Enemy(650,500);
+var goomba = new Enemy(160,100);
 var amogus = new Amogus(700,300);
 var gameLoop;
 
