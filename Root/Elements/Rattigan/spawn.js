@@ -33,7 +33,8 @@ class Player {
       //Jump
       if (keyUp) {
         if (this.yspeed < 1) {
-          this.yspeed = -15;
+          this.yspeed = -15
+          keyUp = false;
         } else if (this.yspeed < -20) {
           this.yspeed += this.friction;
         }
