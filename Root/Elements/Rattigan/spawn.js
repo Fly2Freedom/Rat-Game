@@ -10,6 +10,7 @@ class Player {
     this.width = 50;
     this.height = 100;
     this.active = true;
+    this.jump = false;
   }
 
   //Draw character
@@ -33,7 +34,7 @@ class Player {
       //Jump
       if (keyUp) {
         if (this.yspeed < 1) {
-          this.yspeed = -15
+          this.yspeed = -22 //Changing this number will change the jump height, but it must be negative for it to be an upwards jump.
           keyUp = false;
         } else if (this.yspeed < -20) {
           this.yspeed += this.friction;
@@ -87,11 +88,12 @@ class Player {
         if (checkIntersection(verticalRect, borderRect)) {
           while (checkIntersection(verticalRect, borderRect)) {
             verticalRect.y -= Math.sign(this.yspeed);
+            this.jump = false; //If the bottom of the player rectangle is interacting with another rectangle, the player must not be jumping.
           }
           this.y = verticalRect.y;
           this.yspeed = 0;
+          }
         }
-      }
 
       //Update the player's coordinates.
       this.x += this.xspeed;

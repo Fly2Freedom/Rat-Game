@@ -100,6 +100,7 @@ function inputs() {
   });
 }
 
+//Used to make a 'hitbox' around the player to check for intersections.
 function checkIntersection(r1, r2) {
   if (r1.x >= r2.x + r2.width) {
     return false;
