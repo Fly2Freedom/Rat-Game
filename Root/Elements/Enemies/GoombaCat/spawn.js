@@ -19,7 +19,7 @@ class Enemy {//this is where our enemy class that consists of both Goomba Cat an
     ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.stroke();
   }
-  //Horizontal Collision
+  /*//Horizontal Collision
   let horizontalRect = {
     x: this.x + this.xspeed,
     y: this.y,
@@ -33,6 +33,6 @@ class Enemy {//this is where our enemy class that consists of both Goomba Cat an
     y: this.y + this.yspeed,
     width: this.width,
     height: this.height
-  }
+  }*/
 }
 console.log("yee haw")
