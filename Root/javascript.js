@@ -4,7 +4,7 @@ var ctx = canvas.getContext("2d");
 
 //Player object and variable for looping the game functions
 var player = new Player(600, 540);
-var goomba = new Enemy(160,110);
+var goomba = new Enemy(210,110);
 var amogus = new Enemy(210,350);
 var gameLoop;
 
@@ -114,3 +114,21 @@ function checkIntersection(r1, r2) {
     return true;
   }
 }
+
+
+
+var marker = 1;
+function goombaMovement(){
+  if (marker == 1 && goomba.x != 350) {
+    goomba.x ++;
+  } else if (goomba.x == 350) {
+     marker = 0;
+    goomba.x --;
+  } else if (marker == 0 && goomba.x >= 160) {
+    goomba.x --;
+  }else if (goomba.x <= 160 && goomba.x != 350) {
+    marker = 1;
+    goomba.x ++;
+  }
+}
+setInterval(goombaMovement, 1);
