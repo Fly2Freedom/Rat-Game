@@ -100,6 +100,39 @@ function inputs() {
   });
 }
 
+public class Enemy {
+
+private static final Random r = new Random();
+int x = r.nextInt(36);
+int y = r.nextInt(24);
+Vector2 vect = new Vector2(x,y);
+float ROTATION_SPEED = 500;
+
+    public Follower(float SPEED, float rotation, float width, float height,
+                    Vector2 position) {
+            super(SPEED, rotation, width, height, position);
+    }
+
+    public void advance(float delta, Ship ship) {
+        if(rotation > 360)
+                rotation -= 360;
+
+            position.lerp(vect, delta);
+
+        rotation += delta * ROTATION_SPEED;
+
+
+        super.update(ship);
+
+        //Edited: i forget to put this lines:
+        if(vect.equals(this.getPosition())){
+        x = r.nextInt(36);
+        y = r.nextInt(24);
+
+        }
+}
+
+
 //Used to make a 'hitbox' around the player to check for intersections.
 function checkIntersection(r1, r2) {
   if (r1.x >= r2.x + r2.width) {
