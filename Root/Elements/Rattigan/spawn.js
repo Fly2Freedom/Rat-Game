@@ -10,7 +10,7 @@ class Player {
     this.width = 50;
     this.height = 100;
     this.active = true;
-    this.jump = false;
+    this.jump = true;
   }
 
   //Draw character
@@ -36,7 +36,7 @@ class Player {
         if (this.yspeed < 1) {
           this.yspeed = -22 //Changing this number will change the jump height, but it must be negative for it to be an upwards jump.
           keyUp = false;
-        } else if (this.yspeed < -20) {
+        } else if (this.yspeed < -22) {
           this.yspeed += this.friction;
         }
       }
@@ -92,8 +92,8 @@ class Player {
           }
           this.y = verticalRect.y;
           this.yspeed = 0;
-          }
         }
+      }
 
       //Update the player's coordinates.
       this.x += this.xspeed;
