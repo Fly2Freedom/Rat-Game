@@ -32,7 +32,21 @@ class Player {
         this.xspeed = -5;
       }
       //Jump
+
       if (keyUp) {
+        if (this.jump == false) {
+          this.yspeed = -22;
+        }
+      }
+
+      if (this.jump == false) {
+        this.xspeed *= this.friction;
+      } else {
+        this.yspeed += this.gravity;
+      }
+      this.jump = true;
+
+      /*if (keyUp) {
         if (this.yspeed < 1) {
           this.yspeed = -22 //Changing this number will change the jump height, but it must be negative for it to be an upwards jump.
           keyUp = false;
@@ -40,7 +54,7 @@ class Player {
           this.yspeed += this.friction;
         }
       }
-      this.yspeed += this.gravity;
+      this.yspeed += this.gravity;*/
 
       //Make speed a whole number
       if (this.xspeed > 0) {
