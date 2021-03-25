@@ -31,8 +31,8 @@ class Player {
       } else if (keyLeft) {
         this.xspeed = -5;
       }
-      //Jump
 
+      //Jump
       if (keyUp) {
         if (this.jump == false) {
           this.yspeed = -22;
@@ -45,16 +45,6 @@ class Player {
         this.yspeed += this.gravity;
       }
       this.jump = true;
-
-      /*if (keyUp) {
-        if (this.yspeed < 1) {
-          this.yspeed = -22 //Changing this number will change the jump height, but it must be negative for it to be an upwards jump.
-          keyUp = false;
-        } else if (this.yspeed < -22) {
-          this.yspeed += this.friction;
-        }
-      }
-      this.yspeed += this.gravity;*/
 
       //Make speed a whole number
       if (this.xspeed > 0) {
@@ -97,7 +87,7 @@ class Player {
             horizontalRect.x -= Math.sign(this.xspeed);
           }
           this.x = horizontalRect.x;
-          this.xspeed = 0;
+          this.xspeed = 0; //When there is a collision on the left or right of the player hitbox, then stop all horizontal movement.
         }
         if (checkIntersection(verticalRect, borderRect)) {
           while (checkIntersection(verticalRect, borderRect)) {
@@ -105,7 +95,7 @@ class Player {
             this.jump = false; //If the bottom of the player rectangle is interacting with another rectangle, the player must not be jumping.
           }
           this.y = verticalRect.y;
-          this.yspeed = 0;
+          this.yspeed = 0; //When there is a collision on the top or bottom of the player hitbox, then stop all vertical movement.
         }
       }
 

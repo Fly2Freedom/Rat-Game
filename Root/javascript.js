@@ -115,8 +115,6 @@ function checkIntersection(r1, r2) {
   }
 }
 
-
-
 var marker = 1;
 function goombaMovement(){
   if (marker == 1 && goomba.x != 350) {
