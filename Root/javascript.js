@@ -6,6 +6,7 @@ var ctx = canvas.getContext("2d");
 var player = new Player(600, 540);
 var goomba = new Enemy(210,110);
 var amogus = new Enemy(210,350);
+var newgoomba = new Enemy (1070,110);
 var gameLoop;
 
 //Keypress variables
@@ -66,6 +67,7 @@ function draw() {
   player.spawn();
   goomba.spawn();
   amogus.spawn();
+  newgoomba.spawn();
   //Draw walls
   for (let i = 0; i < walls.length; i++) {
     walls[i].draw();
