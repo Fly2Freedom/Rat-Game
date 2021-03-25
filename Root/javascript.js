@@ -120,7 +120,7 @@ function checkIntersection(r1, r2) {
 }
 
 var marker = 1;
-function goombaMovement(){
+function goombaMovement(){ //top left enemy
   if (marker == 1 && goomba.x != 350) {
     goomba.x ++;
   } else if (goomba.x == 350) {
@@ -134,3 +134,53 @@ function goombaMovement(){
   }
 }
 setInterval(goombaMovement, 1);
+
+var marker2 = 1;
+function newgoombaMovement(){ //top right enemy
+  if (marker2 == 1 && newgoomba.x != 860) {
+    newgoomba.x --;
+  } else if (newgoomba.x == 860) {
+     marker2 = 0;
+    newgoomba.x ++;
+  } else if (marker2 == 0 && newgoomba.x != 1070) {
+    newgoomba.x ++;
+  }else if (newgoomba.x == 1070) {
+    marker2 = 1;
+    newgoomba.x --;
+  }
+}
+setInterval(newgoombaMovement, 1);
+
+
+var marker3 = 1;
+function amogusMovement(){ //middle left enemy
+  if (marker3 == 1 && amogus.x != 420) {
+    amogus.x ++;
+  } else if (amogus.x == 420) {
+     marker3 = 0;
+    amogus.x --;
+  } else if (marker3 == 0 && amogus.x >= 2) {
+    amogus.x --;
+  }else if (amogus.x <= 2 && amogus.x != 420) {
+    marker3 = 1;
+    amogus.x ++;
+  }
+}
+setInterval(amogusMovement, 1);
+
+
+var marker4 = 1;
+function newAmogusMovement(){ //middle right enemy
+  if (marker4 == 1 && newAmogus.x != 790) {
+    newAmogus.x --;
+  } else if (newAmogus.x == 790) {
+     marker4 = 0;
+    newAmogus.x ++;
+  } else if (marker4 == 0 && newAmogus.x != 1229) {
+    newAmogus.x ++;
+  }else if (newAmogus.x >= 1229 && newAmogus.x != 790) {
+    marker4 = 1;
+    newAmogus.x --;
+  }
+}
+setInterval(newAmogusMovement, 1);
