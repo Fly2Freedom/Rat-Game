@@ -121,14 +121,14 @@ function checkIntersection(r1, r2) {
 
 var marker = 1;
 function goombaMovement(){ //top left enemy
-  if (marker == 1 && goomba.x != 350) {
+  if (marker == 1 && goomba.x != 410) {
     goomba.x ++;
-  } else if (goomba.x == 350) {
+  }else if (goomba.x == 410) {
      marker = 0;
     goomba.x --;
   } else if (marker == 0 && goomba.x >= 160) {
     goomba.x --;
-  }else if (goomba.x <= 160 && goomba.x != 350) {
+  }else if (goomba.x <= 160 && goomba.x != 410) {
     marker = 1;
     goomba.x ++;
   }
