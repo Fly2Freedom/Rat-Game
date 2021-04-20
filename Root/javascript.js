@@ -46,11 +46,19 @@ window.onload = function() {
 
   walls.push(new Arena(600, 360, 60, 60, 3)); //POW Block
 
-  walls.push(new Arena(0, 0, 1280, 2, 4)); //Ceiling
+  walls.push(new Arena(0, 0, 1280, 2, 1)); //Ceiling
 
-  walls.push(new Arena(0, 0, 2, 780, 4)); //Left Wall
+  walls.push(new Arena(0, 0, 2, 780, 1)); //Left Wall
 
-  walls.push(new Arena(1279, 0, 2, 780, 4)); //Right Wall
+  walls.push(new Arena(1279, 0, 2, 780, 1)); //Right Wall
+
+  walls.push(new Arena(210, 110, 50, 100, 4)); //Top Left Amogus
+
+  walls.push(new Arena(170, 350, 50, 100, 4)); //Bottom Left Amogus
+
+  walls.push(new Arena(1000, 110, 50, 100, 5)); //Top Right Amogus
+
+  walls.push(new Arena(1070, 350, 50, 100, 5)); //Bottom Right Amogus
 
 }
 
@@ -66,10 +74,6 @@ function draw() {
   ctx.fillRect(0,0,1280,720);
   //Draw player
   player.spawn();
-  goomba.spawn();
-  amogus.spawn();
-  newgoomba.spawn();
-  newAmogus.spawn();
   //Draw walls
   for (let i = 0; i < walls.length; i++) {
     walls[i].draw();
@@ -119,7 +123,7 @@ function checkIntersection(r1, r2) {
   }
 }
 
-var marker = 1;
+/* var marker = 1;
 function goombaMovement(){ //top left enemy
   if (marker == 1 && goomba.x != 410) {
     goomba.x ++;
@@ -183,4 +187,4 @@ function newAmogusMovement(){ //middle right enemy
     newAmogus.x --;
   }
 }
-setInterval(newAmogusMovement, 1);
+setInterval(newAmogusMovement, 1); */
