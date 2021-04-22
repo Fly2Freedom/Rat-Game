@@ -9,6 +9,9 @@ body {
 
 canvas {
   border: 1px solid black;
+  background-image: url("draculas-castle.jpg");
+  background-position: center;
+  background-repeat: repeat;
 }
 
 .Characters {
