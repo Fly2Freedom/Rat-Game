@@ -70,8 +70,7 @@ function move() {
 
 function draw() {
   //Clear canvas
-  ctx.fillStyle = "white";
-  ctx.fillRect(0,0,1280,720);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   //Draw player
   player.spawn();
   //Draw walls
