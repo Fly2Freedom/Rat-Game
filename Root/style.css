@@ -4,14 +4,15 @@
 
 body {
   text-align: center;
-  background-color: gray;
+  background-image: url("bigBackground.png");
+  background-position:top;
 }
 
 canvas {
   border: 1px solid black;
   background-image: url("draculas-castle.jpg");
   background-position: center;
-  background-repeat: repeat;
+background
 }
 
 .Characters {
