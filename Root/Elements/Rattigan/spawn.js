@@ -16,7 +16,7 @@ class Player {
   //Draw character
   spawn() {
     ctx.beginPath()
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "purple";
     ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.stroke();
   }
