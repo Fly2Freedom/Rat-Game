@@ -18,4 +18,42 @@
   <script src="Arena/arena.js"></script>
   <script src="javascript.js"></script>
   <script src="collission.js"></script>
+  <script>
+  var r = document.querySelector(':root');
+  var currentx = r.style.getPropertyValue('--pos-x');
+  var currenty = r.style.getPropertyValue('--pos-y');
+  var right = (currentx + '1000px');
+  var left = (currentx + '600px');
+  var up = (currenty + '350px');
+  var down = (currenty + '600px');
+
+
+  function myFunction_get() {
+    var rs = getComputedStyle(r);
+    console.log("The value of --pos-x is: " + rs.getPropertyValue('--pos-x'));
+    console.log("The value of --pos-y is: " + rs.getPropertyValue('--pos-y'));
+  }
+
+  function spriteRight() {
+    r.style.setProperty('--pos-x', right);
+  }
+
+  function spriteLeft() {
+    r.style.setProperty('--pos-x', left);
+  }
+
+  function spriteUp() {
+    r.style.setProperty('--pos-y', up);
+  }
+
+  function spriteDown() {
+    r.style.setProperty('--pos-y', down);
+  }
+
+  function spriteNormal() {
+    r.style.setProperty('--pos-x', '810px');
+    r.style.setProperty('--pos-y', '647px');
+  }
+
+  </script>
 </html>

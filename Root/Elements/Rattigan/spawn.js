@@ -8,7 +8,7 @@ class Player {
     this.gravity = 1;
     this.maxSpeed = 10;
     this.width = 50;
-    this.height = 100;
+    this.height = 85;
     this.active = true;
     this.jump = true;
   }

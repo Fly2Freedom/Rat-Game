@@ -86,12 +86,20 @@ function inputs() {
   document.addEventListener("keydown", function(event) {
     if (event.key === "w" || event.key === "ArrowUp") {
       keyUp = true;
+      spriteUp();
     } else if (event.key === "a" || event.key === "ArrowLeft") {
       keyLeft = true;
+      spriteLeft();
     } else if (event.key === "s" || event.key === "ArrowDown") {
       keyDown = true;
+      spriteDown();
     } else if (event.key === "d" || event.key === "ArrowRight") {
       keyRight = true;
+      spriteRight();
+    } else if (event.key === "r") {
+      myFunction_get();
+    } else if (event.key === "m") {
+      spriteNormal();
     }
   });
   document.addEventListener("keyup", function(event) {
