@@ -9,7 +9,7 @@ body {
 }
 
 canvas {
-  border: 1px solid black;
+  border: 1px solid;
   background-image: url("draculas-castle.jpg");
   background-position: center;
 background
