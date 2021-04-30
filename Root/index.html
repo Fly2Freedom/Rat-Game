@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1 style="color: red; font-size: 30px; font-family: sans-serif;">aw yeah baby</h1>
-    <canvas width=1280 height=720 id="game-canvas" style="border:4px solid; color: blue"></canvas>
+    <h1>aw yeah baby</h1>
+    <canvas width=1280 height=720 id="game-canvas" style="border:8px solid; color: blue"></canvas>
   </body>
   <div class="Characters">
     <img class="Spritesheet pixelart" src="Elements/Assets/spritesheet1.png" alt="Character" />
@@ -19,40 +19,47 @@
   <script src="javascript.js"></script>
   <script src="collission.js"></script>
   <script>
-  var r = document.querySelector(':root');
-  var currentx = r.style.getPropertyValue('--pos-x');
-  var currenty = r.style.getPropertyValue('--pos-y');
-  var right = (currentx + '1000px');
-  var left = (currentx + '600px');
-  var up = (currenty + '350px');
-  var down = (currenty + '600px');
+  // I did left and right, you will need to figure out more stuffs
+  // works a lot better looking at code on my machine then remote
+  var r = document.documentElement;
+  var currentx = getComputedStyle(r).getPropertyValue('--pos-x'); // now have inital x & y
+  var currenty = getComputedStyle(r).getPropertyValue('--pos-y');
+  var moveAmount = 10; // step to move
 
+  function strippx(val){  // turn the prop val into an int
+    val.slice(1, -2)
+    val = parseInt(val);
+    return val;
+  }
 
-  function myFunction_get() {
-    var rs = getComputedStyle(r);
-    console.log("The value of --pos-x is: " + rs.getPropertyValue('--pos-x'));
-    console.log("The value of --pos-y is: " + rs.getPropertyValue('--pos-y'));
+  function makepx(val){  // remake the string
+    return" " + val + "px"
+  }
+
+  function makemove(start, amount){ // wrapper for all the things to be done
+      var val = strippx(start);
+      val += amount;
+      return makepx(val);
   }
 
   function spriteRight() {
-    r.style.setProperty('--pos-x', right);
+    currentx = makemove(currentx, moveAmount); // track value with currentx so we don't have to keep pulling xpos
+    r.style.setProperty('--pos-x', currentx);
   }
 
   function spriteLeft() {
-    r.style.setProperty('--pos-x', left);
+    currentx = makemove(currentx, -(moveAmount)); // left move = negative steps
+    r.style.setProperty('--pos-x', currentx);
   }
 
   function spriteUp() {
-    r.style.setProperty('--pos-y', up);
+    currenty = makemove(currenty, -(moveAmount));
+    r.style.setProperty('--pos-y', currenty);
   }
 
   function spriteDown() {
-    r.style.setProperty('--pos-y', down);
-  }
-
-  function spriteNormal() {
-    r.style.setProperty('--pos-x', '810px');
-    r.style.setProperty('--pos-y', '647px');
+    currenty = makemove(currenty, moveAmount);
+    r.style.setProperty('--pos-y', currenty);
   }
 
   </script>
