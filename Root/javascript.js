@@ -65,6 +65,7 @@ window.onload = function() {
 //Checks for movement 60 times per second (60fps) and then draws everything.
 function move() {
   player.move();
+  moveCharacter();
   draw();
 }
 
@@ -86,16 +87,16 @@ function inputs() {
   document.addEventListener("keydown", function(event) {
     if (event.key === "w" || event.key === "ArrowUp") {
       keyUp = true;
-      spriteUp();
+      upKey = true;
     } else if (event.key === "a" || event.key === "ArrowLeft") {
       keyLeft = true;
-      spriteLeft();
+      leftKey = true;
     } else if (event.key === "s" || event.key === "ArrowDown") {
       keyDown = true;
-      spriteDown();
+      downKey = true;
     } else if (event.key === "d" || event.key === "ArrowRight") {
       keyRight = true;
-      spriteRight();
+      rightKey = true;
     } else if (event.key === "r") {
       myFunction_get();
     } else if (event.key === "m") {
@@ -105,12 +106,16 @@ function inputs() {
   document.addEventListener("keyup", function(event) {
     if (event.key === "w" || event.key === "ArrowUp") {
       keyUp = false;
+      upKey = false;
     } else if (event.key === "a" || event.key === "ArrowLeft") {
       keyLeft = false;
+      leftKey = false;
     } else if (event.key === "s" || event.key === "ArrowDown") {
       keyDown = false;
+      downKey = false;
     } else if (event.key === "d" || event.key === "ArrowRight") {
       keyRight = false;
+      rightKey = false;
     }
   });
 }

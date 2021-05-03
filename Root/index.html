@@ -24,7 +24,12 @@
   var r = document.documentElement;
   var currentx = getComputedStyle(r).getPropertyValue('--pos-x'); // now have inital x & y
   var currenty = getComputedStyle(r).getPropertyValue('--pos-y');
-  var moveAmount = 10; // step to move
+  var moveAmount = 4; // step to move
+  var active = true;
+  var upKey;
+  var downKey;
+  var leftKey;
+  var rightKey;
 
   function strippx(val){  // turn the prop val into an int
     val.slice(1, -2)
@@ -42,24 +47,22 @@
       return makepx(val);
   }
 
-  function spriteRight() {
-    currentx = makemove(currentx, moveAmount); // track value with currentx so we don't have to keep pulling xpos
-    r.style.setProperty('--pos-x', currentx);
-  }
-
-  function spriteLeft() {
-    currentx = makemove(currentx, -(moveAmount)); // left move = negative steps
-    r.style.setProperty('--pos-x', currentx);
-  }
-
-  function spriteUp() {
-    currenty = makemove(currenty, -(moveAmount));
-    r.style.setProperty('--pos-y', currenty);
-  }
-
-  function spriteDown() {
-    currenty = makemove(currenty, moveAmount);
-    r.style.setProperty('--pos-y', currenty);
+  function moveCharacter() {
+    if (active) {
+      if (rightKey) {
+        currentx = makemove(currentx, moveAmount);
+        r.style.setProperty('--pos-x', currentx);
+      } else if (leftKey) {
+        currentx = makemove(currentx, -(moveAmount));
+        r.style.setProperty('--pos-x', currentx);
+      } else if (upKey) {
+        currenty = makemove(currenty, -(moveAmount));
+        r.style.setProperty('--pos-y', currenty)
+      } else if (downKey) {
+        currenty = makemove(currenty, moveAmount);
+        r.style.setProperty('--pos-y', currenty);
+      }
+    }
   }
 
   </script>
