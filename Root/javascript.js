@@ -19,6 +19,11 @@ var keyRight;
 //Variable for drawing walls
 var walls = [];
 
+//Sprite Movement
+var spritexspeed = 0;
+var spriteyspeed = 0;
+var spriteJump = true;
+
 //When the 'game' opens...
 window.onload = function() {
   //Set up key inputs

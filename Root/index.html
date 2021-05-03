@@ -24,7 +24,9 @@
   var r = document.documentElement;
   var currentx = getComputedStyle(r).getPropertyValue('--pos-x'); // now have inital x & y
   var currenty = getComputedStyle(r).getPropertyValue('--pos-y');
-  var moveAmount = 4; // step to move
+  var friction = 0.4;
+  var gravity = 1;
+  var maxspeed = 10;
   var active = true;
   var upKey;
   var downKey;
@@ -50,17 +52,38 @@
   function moveCharacter() {
     if (active) {
       if (rightKey) {
-        currentx = makemove(currentx, moveAmount);
+        spritexspeed = 4;
+        currentx = makemove(currentx, spritexspeed);
         r.style.setProperty('--pos-x', currentx);
       } else if (leftKey) {
-        currentx = makemove(currentx, -(moveAmount));
+        spritexspeed = 4;
+        currentx = makemove(currentx, -(spritexspeed));
         r.style.setProperty('--pos-x', currentx);
-      } else if (upKey) {
-        currenty = makemove(currenty, -(moveAmount));
-        r.style.setProperty('--pos-y', currenty)
-      } else if (downKey) {
-        currenty = makemove(currenty, moveAmount);
-        r.style.setProperty('--pos-y', currenty);
+      }
+
+      if (upKey) {
+        if (spriteJump == false) {
+          spriteyspeed = 6;
+          currenty = makemove(currenty, -(spriteyspeed));
+          r.style.setProperty('--pos-y', currenty);
+        }
+      }
+
+      if (spriteJump == false) {
+        if (leftKey) {
+          spritexspeed *= friction;
+          currentx = makemove(currentx, spritexspeed);
+          r.style.setProperty('--pos-x', currentx);
+        } else if (rightKey) {
+          spritexspeed *= friction;
+          currentx = makemove(currentx, -(spritexspeed));
+          r.style.setProperty('--pos-x', currentx);
+        } else if (spriteJump == true) {
+          spriteyspeed += gravity;
+          currenty = makemove(currenty, spriteyspeed);
+          r.style.setProperty('--pos-y', currenty);
+        }
+        spriteJump = true;
       }
     }
   }
