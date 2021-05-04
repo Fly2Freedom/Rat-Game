@@ -95,10 +95,10 @@ class Player {
             verticalRect.y -= Math.sign(this.yspeed);
             this.jump = false; //If the bottom of the player rectangle is interacting with another rectangle, the player must not be jumping.
             spriteJump = false;
+            spriteyspeed = 0;
           }
           this.y = verticalRect.y;
           this.yspeed = 0; //When there is a collision on the top or bottom of the player hitbox, then stop all vertical movement.
-          spriteyspeed = -1;
         }
       }
 
