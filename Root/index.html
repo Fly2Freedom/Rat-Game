@@ -9,84 +9,10 @@
     <h1>aw yeah baby</h1>
     <canvas width=1280 height=720 id="game-canvas" style="border:8px solid; color: blue"></canvas>
   </body>
-  <div class="Characters">
-    <img class="Spritesheet pixelart" src="Elements/Assets/spritesheet1.png" alt="Character" />
-  </div>
   <script src="Elements/Enemies/amogus/spawn.js"></script>
   <script src="Elements/Enemies/GoombaCat/spawn.js"></script>
   <script src="Elements/Rattigan/spawn.js"></script>
-  <script src="Arena/arena.js"></script>
   <script src="javascript.js"></script>
-  <script src="collission.js"></script>
-  <script>
-  // I did left and right, you will need to figure out more stuffs
-  // works a lot better looking at code on my machine then remote
-  var r = document.documentElement;
-  var currentx = getComputedStyle(r).getPropertyValue('--pos-x'); // now have inital x & y
-  var currenty = getComputedStyle(r).getPropertyValue('--pos-y');
-  var friction = 0.4;
-  var gravity = 2;
-  var maxspeed = 10;
-  var active = true;
-  var upKey;
-  var downKey;
-  var leftKey;
-  var rightKey;
-
-  function strippx(val){  // turn the prop val into an int
-    val.slice(1, -2)
-    val = parseInt(val);
-    return val;
-  }
-
-  function makepx(val){  // remake the string
-    return" " + val + "px"
-  }
-
-  function makemove(start, amount){ // wrapper for all the things to be done
-      var val = strippx(start);
-      val += amount;
-      return makepx(val);
-  }
-
-  function moveCharacter() {
-    if (active) {
-      if (rightKey) {
-        spritexspeed = 4;
-        currentx = makemove(currentx, spritexspeed);
-        r.style.setProperty('--pos-x', currentx);
-      } else if (leftKey) {
-        spritexspeed = 4;
-        currentx = makemove(currentx, -(spritexspeed));
-        r.style.setProperty('--pos-x', currentx);
-      }
-
-      if (upKey) {
-        if (spriteJump == false) {
-          spriteyspeed = 6;
-          currenty = makemove(currenty, -(spriteyspeed));
-          r.style.setProperty('--pos-y', currenty);
-        }
-      }
-
-      if (spriteJump == false) {
-        if (leftKey) {
-          spritexspeed *= friction;
-          currentx = makemove(currentx, spritexspeed);
-          r.style.setProperty('--pos-x', currentx);
-        } else if (rightKey) {
-          spritexspeed *= friction;
-          currentx = makemove(currentx, -(spritexspeed));
-          r.style.setProperty('--pos-x', currentx);
-        } else if (spriteJump == true) {
-          spriteyspeed += gravity;
-          currenty = makemove(currenty, spriteyspeed);
-          r.style.setProperty('--pos-y', currenty);
-        }
-      }
-      spriteJump = true;  1
-    }
-  }
-
-  </script>
+  <script src="Elements/Rattigan/spritemovement.js"></script>
+  <script src="Arena/arena.js"></script>
 </html>

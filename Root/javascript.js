@@ -19,11 +19,6 @@ var keyRight;
 //Variable for drawing walls
 var walls = [];
 
-//Sprite Movement
-var spritexspeed = 0;
-var spriteyspeed = 0;
-var spriteJump = true;
-
 //When the 'game' opens...
 window.onload = function() {
   //Set up key inputs
@@ -70,7 +65,7 @@ window.onload = function() {
 //Checks for movement 60 times per second (60fps) and then draws everything.
 function move() {
   player.move();
-  moveCharacter();
+  spriteMove();
   draw();
 }
 
@@ -92,35 +87,23 @@ function inputs() {
   document.addEventListener("keydown", function(event) {
     if (event.key === "w" || event.key === "ArrowUp") {
       keyUp = true;
-      upKey = true;
     } else if (event.key === "a" || event.key === "ArrowLeft") {
       keyLeft = true;
-      leftKey = true;
     } else if (event.key === "s" || event.key === "ArrowDown") {
       keyDown = true;
-      downKey = true;
     } else if (event.key === "d" || event.key === "ArrowRight") {
       keyRight = true;
-      rightKey = true;
-    } else if (event.key === "r") {
-      myFunction_get();
-    } else if (event.key === "m") {
-      spriteNormal();
     }
   });
   document.addEventListener("keyup", function(event) {
     if (event.key === "w" || event.key === "ArrowUp") {
       keyUp = false;
-      upKey = false;
     } else if (event.key === "a" || event.key === "ArrowLeft") {
       keyLeft = false;
-      leftKey = false;
     } else if (event.key === "s" || event.key === "ArrowDown") {
       keyDown = false;
-      downKey = false;
     } else if (event.key === "d" || event.key === "ArrowRight") {
       keyRight = false;
-      rightKey = false;
     }
   });
 }

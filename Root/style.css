@@ -1,45 +1,12 @@
-:root {
-  --pixel-size: 5;
-  --pos-y: 647px;
-  --pos-x: 810px;
-}
-
 body {
   text-align: center;
-  background-image: url("bigBackground.png");
+  background-image: url("Elements/Assets/bigBackground.png");
   background-position:top;
 }
 
 canvas {
   border: 1px solid;
-  background-image: url("draculas-castle.jpg");
+  background-image: url("Elements/Assets/draculas-castle.jpg");
   background-position: center;
 background
-}
-
-.Characters {
-  width: calc(18px * var(--pixel-size));
-  height: calc(18px * var(--pixel-size));
-  overflow: hidden;
-  position: absolute;
-  top: var(--pos-y);
-  left: var(--pos-x);
-}
-
-.Spritesheet {
-  animation: moveSpritesheet 1s steps(7) infinite;
-  width: calc(192px * var(--pixel-size));
-}
-
-.pixelart {
-  image-rendering: pixelated;
-}
-
-@keyframes moveSpritesheet {
-  from {
-    transform: translate3d(-16px, 0, 0)
-  }
-  to {
-    transform: translate3d(-100%, 0, 0)
-  }
 }
