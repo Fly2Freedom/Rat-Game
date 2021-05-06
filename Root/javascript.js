@@ -36,10 +36,6 @@ window.onload = function() {
 
   walls.push(new Arena(860, 210, 420, 50, 1)); //Platform 4
 
-  walls.push(new Arena(0, 520, 160, 100, 2)); //Bottom Left Pipe
-
-  walls.push(new Arena(1120, 520, 160, 100, 2)); //Bottom Right Pipe
-
   walls.push(new Arena(0, 80, 160, 100, 2)); //Top Left Pipe
 
   walls.push(new Arena(1120, 80, 160, 100, 2)); //Top Right Pipe
