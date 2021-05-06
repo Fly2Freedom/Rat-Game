@@ -2,7 +2,7 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 
-//Player object and variable for looping the game functions
+//Player/Enemy objects and variable for looping the game functions
 var player = new Player(600, 540);
 var goomba = new Enemy(210,110);
 var amogus = new Enemy(210,350);
@@ -28,7 +28,7 @@ window.onload = function() {
   //Create walls
   walls.push(new Arena(0, 650, 1280, 100, 1)); //Floor (x, y, width, height type)
 
-  walls.push(new Arena(-30, 440, 500, 50, 1)); //Platform 1
+  walls.push(new Arena(-30, 440, 500, 50, 1)); //Platform 1 (x, y, width, height type)
 
   walls.push(new Arena(790, 440, 580, 50, 1)); //Platform 2
 
@@ -64,8 +64,11 @@ window.onload = function() {
 
 //Checks for movement 60 times per second (60fps) and then draws everything.
 function move() {
-  player.move();
+  //Give's the player 'hitbox' movement functionality.
+
+  //Give's the player sprite movement functionality.
   spriteMove();
+  //Draws (updates) the player's position and other things every frame.
   draw();
 }
 
@@ -73,7 +76,7 @@ function draw() {
   //Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   //Draw player
-  player.spawn();
+
   //Draw walls
   for (let i = 0; i < walls.length; i++) {
     walls[i].draw();

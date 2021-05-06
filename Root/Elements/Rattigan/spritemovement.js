@@ -1,7 +1,7 @@
-const frameWidth = 33;
-const frameHeight = 33;
+const frameWidth = 27; //Bigger = <--- || Smaller = --->
+const frameHeight = 95; //Can't go above 95 or else it breaks the game??
 const scale = 3;
-const fps = 110;
+const fps = 130;
 const secondsToUpdate = 0.1 * fps;
 var count = 0;
 var frameIndex = 0;
@@ -20,7 +20,7 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 
 const spriteSheet = new Image();
-spriteSheet.src = "Elements/Assets/rat4.png";
+spriteSheet.src = "Elements/Assets/rat1.png";
 
 const State = {
   states: {},
@@ -132,7 +132,7 @@ function spriteMove() {
           horizontalRect.x -= Math.sign(xspeed);
         }
         xPos = horizontalRect.x;
-        xspeed = 0; 
+        xspeed = 0;
       }
       if (checkIntersection(verticalRect, borderRect)) {
         while (checkIntersection(verticalRect, borderRect)) {
@@ -149,8 +149,14 @@ function spriteMove() {
 }
 
 function frame() {
-  animate(State.getState("walk"));
-  requestAnimationFrame(frame);
+  if (!keyLeft && !keyRight || keyLeft && keyRight) {
+    animate(State.getState("chill"));
+    requestAnimationFrame(frame);
+  } else if (keyLeft || keyRight) {
+
+    animate(State.getState("walk"));
+    requestAnimationFrame(frame);
+  }
 }
 
 frame();
