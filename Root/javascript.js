@@ -50,11 +50,11 @@ window.onload = function() {
 
   walls.push(new Arena(210, 110, 50, 100, 4)); //Top Left Amogus
 
-  walls.push(new Arena(210, 450, 50, 100, 4)); //Bottom Left Amogus
+  walls.push(new Arena(210, 400, 50, 100, 4)); //Bottom Left Amogus
 
   walls.push(new Arena(1000, 110, 50, 100, 5)); //Top Right Amogus
 
-  walls.push(new Arena(1070, 450, 50, 100, 5)); //Bottom Right Amogus
+  walls.push(new Arena(1070, 400, 50, 100, 5)); //Bottom Right Amogus
 
 }
 
