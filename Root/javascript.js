@@ -28,9 +28,9 @@ window.onload = function() {
   //Create walls
   walls.push(new Arena(0, 650, 1280, 100, 1)); //Floor (x, y, width, height type)
 
-  walls.push(new Arena(-30, 440, 500, 50, 1)); //Platform 1 (x, y, width, height type)
+  walls.push(new Arena(-30, 500, 500, 50, 1)); //Platform 1 (x, y, width, height type)
 
-  walls.push(new Arena(790, 440, 580, 50, 1)); //Platform 2
+  walls.push(new Arena(790, 500, 580, 50, 1)); //Platform 2
 
   walls.push(new Arena(-20, 210, 420, 50, 1)); //Platform 3
 
@@ -50,11 +50,11 @@ window.onload = function() {
 
   walls.push(new Arena(210, 110, 50, 100, 4)); //Top Left Amogus
 
-  walls.push(new Arena(170, 350, 50, 100, 4)); //Bottom Left Amogus
+  walls.push(new Arena(210, 450, 50, 100, 4)); //Bottom Left Amogus
 
   walls.push(new Arena(1000, 110, 50, 100, 5)); //Top Right Amogus
 
-  walls.push(new Arena(1070, 350, 50, 100, 5)); //Bottom Right Amogus
+  walls.push(new Arena(1070, 450, 50, 100, 5)); //Bottom Right Amogus
 
 }
 
