@@ -2,11 +2,12 @@ body {
   text-align: center;
   background-image: url("Elements/Assets/bigBackground.png");
   background-position:top;
+  background-size: 2000px;
 }
 
 canvas {
   border: 1px solid;
   background-image: url("Elements/Assets/draculas-castle.jpg");
   background-position: center;
-background
+  background-size: 1800px;
 }
