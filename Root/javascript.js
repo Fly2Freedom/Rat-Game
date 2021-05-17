@@ -32,13 +32,13 @@ window.onload = function() {
 
   walls.push(new Arena(790, 500, 580, 50, 1)); //Platform 2
 
-  walls.push(new Arena(-20, 210, 420, 50, 1)); //Platform 3
+  walls.push(new Arena(-20, 250, 420, 50, 1)); //Platform 3
 
-  walls.push(new Arena(860, 210, 420, 50, 1)); //Platform 4
+  walls.push(new Arena(860, 250, 420, 50, 1)); //Platform 4
 
-  walls.push(new Arena(0, 80, 160, 100, 2)); //Top Left Pipe
+  walls.push(new Arena(0, 130, 160, 100, 2)); //Top Left Pipe
 
-  walls.push(new Arena(1120, 80, 160, 100, 2)); //Top Right Pipe
+  walls.push(new Arena(1120, 125, 160, 100, 2)); //Top Right Pipe
 
   walls.push(new Arena(600, 360, 60, 60, 3)); //POW Block
 
@@ -48,11 +48,11 @@ window.onload = function() {
 
   walls.push(new Arena(1279, 0, 2, 780, 1)); //Right Wall
 
-  walls.push(new Arena(210, 110, 50, 100, 4)); //Top Left Amogus
+  walls.push(new Arena(210, 150, 50, 100, 4)); //Top Left Amogus
 
   walls.push(new Arena(210, 400, 50, 100, 4)); //Bottom Left Amogus
 
-  walls.push(new Arena(1000, 110, 50, 100, 5)); //Top Right Amogus
+  walls.push(new Arena(1000, 150, 50, 100, 5)); //Top Right Amogus
 
   walls.push(new Arena(1070, 400, 50, 100, 5)); //Bottom Right Amogus
 
