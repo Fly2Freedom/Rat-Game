@@ -17,6 +17,14 @@ class Amogus {
     ctx.fillStyle = "red";
     ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.stroke();
+
+
   }
 }
+
+
+
+
+
+
 console.log("Hi world");

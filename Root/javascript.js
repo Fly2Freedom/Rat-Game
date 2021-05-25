@@ -76,8 +76,10 @@ function draw() {
   //Draw walls
   for (let i = 0; i < walls.length; i++) {
     walls[i].draw();
-    ctx.fillStyle = "maroon";
-    ctx.fillRect(0,650,1280,100,1);
+    //ctx.fillStyle = "maroon";
+    //ctx.fillRect(0,650,1280,100,1);
+
+
   }
 }
 
@@ -122,7 +124,7 @@ function checkIntersection(r1, r2) {
   }
 }
 
-/* var marker = 1;
+ var marker = 1;
 function goombaMovement(){ //top left enemy
   if (marker == 1 && goomba.x != 410) {
     goomba.x ++;
@@ -157,6 +159,7 @@ setInterval(newgoombaMovement, 1);
 
 var marker3 = 1;
 function amogusMovement(){ //middle left enemy
+
   if (marker3 == 1 && amogus.x != 420) {
     amogus.x ++;
   } else if (amogus.x == 420) {
@@ -186,4 +189,4 @@ function newAmogusMovement(){ //middle right enemy
     newAmogus.x --;
   }
 }
-setInterval(newAmogusMovement, 1); */
+setInterval(newAmogusMovement, 1);

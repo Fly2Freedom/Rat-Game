@@ -17,8 +17,13 @@ class Enemy {//this is where our enemy class that consists of both Goomba Cat an
     ctx.beginPath()
     ctx.fillStyle = "blue";
     ctx.fillRect(this.x, this.y, this.width, this.height);
-    ctx.stroke();
+    var birb = new Image();
+    birb.src = "spritesheet1.png"
+    birb.width = 10;
+    birb.height = 10;
+    ctx.drawImage(birb, 150, 150, 10, 10 );
   }
+
   /*//Horizontal Collision
   let horizontalRect = {
     x: this.x + this.xspeed,
