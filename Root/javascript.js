@@ -49,7 +49,7 @@ window.onload = function() {
   walls.push(new Arena(1279, 0, 2, 780, 1)); //Right Wall
 
   walls.push(new Arena(210, 150, 50, 100, 4)); //Top Left Amogus
-
+  
   walls.push(new Arena(210, 400, 50, 100, 4)); //Bottom Left Amogus
 
   walls.push(new Arena(1000, 150, 50, 100, 5)); //Top Right Amogus

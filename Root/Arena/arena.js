@@ -15,17 +15,17 @@ class Arena {
     } else if (this.type === 2) { //Rectangle Type 2 = Pipe Sprites
     //  ctx.fillStyle = "pipe";
       var img = new Image();
-      img.src = "Elements/Assets/new pow block.png";
+      img.src = "Elements/Assets/blockitos-2019.jpg";
       ctx.drawImage(img, 600, 360, 60, 60,);
       var img = new Image();
       img.src = "Elements/Assets/pipe1.png";
-      ctx.drawImage(img, -25, 60, 200, 250,);
+      ctx.drawImage(img, -43, 60, 200, 250,);
       var img = new Image();
       img.src = "Elements/Assets/pipe2.png";
-      ctx.drawImage(img, 1100, 70, 200, 250,);
+      ctx.drawImage(img, 1121, 70, 200, 250,);
       var img = new Image();
       img.src = "Elements/Assets/platform.png";
-      ctx.drawImage(img, 600, 650, 800, 70,);
+      ctx.drawImage(img, 605, 650, 800, 70,);
       var img = new Image();
       img.src = "Elements/Assets/platform.png";
       ctx.drawImage(img, -25, 650, 800, 70,);
@@ -37,12 +37,13 @@ class Arena {
       ctx.drawImage(img, 790, 500, 800, 50,);
       var img = new Image();
       img.src = "Elements/Assets/platform.png";
-      ctx.drawImage(img, 900, 250, 800, 50,);
+      ctx.drawImage(img, 890, 250, 800, 50,);
       var img = new Image();
       img.src = "Elements/Assets/platform.png";
       ctx.drawImage(img, -400, 250, 800, 50,);
     } else if (this.type === 3) { //Rectangle Type 3 = Pow Block Sprite
     //  ctx.fillStyle = "pow";
+
     } else if (this.type === 4) { //Rectangle Type 4 = Left Side Amogus Enemies
 
       if (this.x <= 300) { //Movement for enemies on the left side
